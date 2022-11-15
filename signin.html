@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loc saver</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="topnavbar">
+            I can save your location free your mind
+        </div>
+        <!-- <div class="click">
+            <button onclick="getLocation()">Save location</button>
+        </div> -->
+        <div id="loginbox">
+            <div class="left">
+                <h1>Sign in</h1>
+
+                <!-- <input type="text" id="username" name="username" placeholder="Username"/> -->
+                <input type="text" id="email" name="email" placeholder="E-mail"/>
+                <input type="text" id="password" name="password" placeholder="Password"/>
+
+                <input type="submit" id="login" name="submit" value="Login"/>
+            </div>
+                        
+            <div class="right">
+                <h1> Sign in with</h1>
+                <button class="social-signin google">Google</button>
+                <button class="social-signin facebook">facebook</button>
+                <button class="social-signin twitter">Twitter</button>
+            </div>
+
+            <div>
+                <a href="signup.html">Sign Up</a>
+            </div>
+
+        </div>
+
+    
+
+        
+        
+    </body>
+    <script type="module" >
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        //import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+        import { getDatabase} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+        import {set} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+        import {ref,update} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyBS76Sg5UWerhMTpO5xEF67ZfhdX92dD6U",
+        authDomain: "accuratelocationsaver.firebaseapp.com",
+        projectId: "accuratelocationsaver",
+        storageBucket: "accuratelocationsaver.appspot.com",
+        messagingSenderId: "1000791921278",
+        appId: "1:1000791921278:web:0f40ed5d05d92b5199be2f",
+        measurementId: "G-2TWMSD3V8Y",
+        databaseURL: "https://accuratelocationsaver-default-rtdb.europe-west1.firebasedatabase.app"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        //const analytics = getAnalytics(app);
+        const database=getDatabase(app);
+        const auth=getAuth();
+
+        //login registration 
+    
+        login.addEventListener('click',(e)=>{
+
+            var email=document.getElementById('email').value;
+            var password=document.getElementById('password').value;
+           
+            
+
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+
+                const today=new Date();
+                update(ref(database, 'users/' + user.uid),{
+                        last_login: today
+                });
+
+                
+                // ...
+            })
+            .catch((error ) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+                // ..
+            });
+            
+
+
+        });
+        
+       
+        const user = auth.currentUser;
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                const uid = user.uid;
+                window.location="address.html";
+                // ...
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+        // Import the functions needed from the SDKs
+</script>
+</html>

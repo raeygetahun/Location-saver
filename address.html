@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loc saver</title>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style2.css">
+    </head>
+
+    <body>
+        <div class="topnavbar">
+            I can save your location
+            <span class="floatleft"> 
+            <input type="submit" id="logout" name="submit" value="Signout">
+            </span> 
+        </div>
+        <div class="containit">
+            <!-- <button onclick="getLocation()">Save location</button> -->
+            <img src="./images/main4.jpg" style="width: 100%">
+            <div class="altered">Thank you for choosing me</div>
+            <div class="altered2">
+                <img src="pin.png" width="200"
+                height="250" style="padding: 10px;">
+                    <div>
+                        <input id="but" type = "button" onclick = "getLocation()" value = "Save Current Address"><br>
+                        <input id="but" type = "button" onclick = "loadLocation()" value = " Load Saved Address ">  
+                    </div >
+                    <div id="demo">    
+                    </div>
+                    <div id="demo2">    
+                    </div>
+                    <div id="demo3">    
+                    </div>
+                    <div id="demo4">  
+                        <button type="submit" id="submitphone" name="submit">Submit</button>  
+                    </div>
+            </div>
+           
+
+            <!-- <div>
+                <a href="signin.html">Sign IN</a>
+                <a href="signup.html">Sign UP</a>
+            </div> -->  
+                    <!-- <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" class="cancelbtn">Cancel</button>
+                      <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div> -->
+                <!-- </form> -->
+                <!-- 
+            </div> -->
+        </div> 
+        <!-- <div>
+            <a href="signin.html">Sign IN</a>
+            <a href="signup.html">Sign UP</a>
+        </div>         -->
+    </body>
+    <footer class="footer">
+        <div class="text-center">&copy; copyright Raey Getahun </div>
+    
+        </div>
+        <div class="text-center" style="font-size: 0.75em;">
+          Developed by <a href="https://www.linkedin.com/in/raey-getahun-976154238" target="_blank">Raey Getahun</a>
+        </div>
+    
+    </footer>
+
+    
+    <script type="module" src="save.js"></script>
+    <script type="module" src="signout.js"></script>
+    <script src="./text/bundle.js"></script>
+
+    <script type="module">
+        import { getLocation } from "./address.js";
+        window.getLocation=getLocation;
+       import { loadLocation } from "./address.js";
+       window.loadLocation=loadLocation;
+    </script>
+
+
+</html>

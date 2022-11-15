@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loc saver</title>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style2.css">
+    </head>
+
+    <body>
+        <div class="topnavbar">
+            I can save your location free your mind
+        </div>
+        <div class="containit">
+            <!-- <button onclick="getLocation()">Save location</button> -->
+            <img src="./images/main4.jpg" style="width: 100%">
+            <div class="altered">Welcome to loc saver</div>
+            <div class="form_it">
+
+                    <!-- <div class="imgcontainer">
+                      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                    </div> -->
+                  
+                    <div class="containe">
+                        <div style="font-size: 1.5em; padding: 0px 0px 10px 0px">Sign up</div>
+                        <input type="text" id="email" name="email" placeholder="E-mail"/>
+                        <input type="text" id="password" name="password" placeholder="Password" onkeyup='check();'/>
+
+                        <input type="text" id="password2" name="password2" placeholder="Repeat Password" onkeyup='check();'/>
+                        <div id="message"></div>
+                  
+                      <!-- <input type="submit" id="login" name="submit" value="Login"/> -->
+                      <button type="submit" id="savedata" name="submit">Sign up now</button>
+                      <!-- <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label> -->
+                      <!-- <div class="signinow">
+                        New here? <a href="signup.html">Sign up now</a>
+                      </div> -->
+                    </div>
+                  
+                    <!-- <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" class="cancelbtn">Cancel</button>
+                      <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div> -->
+                </form>
+
+            </div>
+        </div> 
+        <!-- <div>
+            <a href="signin.html">Sign IN</a>
+            <a href="signup.html">Sign UP</a>
+        </div>         -->
+    </body>
+    <footer class="footer">
+        <div class="text-center">&copy; copyright Raey Getahun </div>
+    
+        </div>
+        <div class="text-center" style="font-size: 0.75em;">
+          Developed by <a href="https://www.linkedin.com/in/raey-getahun-976154238" target="_blank">Raey Getahun</a>
+        </div>
+    
+      </footer>
+    <script>
+        var a=document.getElementById('password');
+        console.log(a,"hrl");
+        var check = function() {
+            if(document.getElementById('password2')!=""){
+                if (document.getElementById('password').value==
+                document.getElementById('password2').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'matching';
+                } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'not matching';
+                }  
+            }
+
+          }
+        
+    </script>
+    <script type="module" src="scriptsignup.js">
+
+    </script>
+</html>
