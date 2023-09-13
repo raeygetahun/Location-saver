@@ -30,16 +30,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebas
 
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-        apiKey: "AIzaSyBS76Sg5UWerhMTpO5xEF67ZfhdX92dD6U",
-        authDomain: "accuratelocationsaver.firebaseapp.com",
-        projectId: "accuratelocationsaver",
-        storageBucket: "accuratelocationsaver.appspot.com",
-        messagingSenderId: "1000791921278",
-        appId: "1:1000791921278:web:0f40ed5d05d92b5199be2f",
-        measurementId: "G-2TWMSD3V8Y",
-        databaseURL: "https://accuratelocationsaver-default-rtdb.europe-west1.firebasedatabase.app"
-        };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
